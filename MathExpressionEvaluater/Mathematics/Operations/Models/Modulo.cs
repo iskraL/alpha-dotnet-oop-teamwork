@@ -21,7 +21,14 @@ namespace Mathematics.Operations.Models
                 throw new InvalidOperationException("Not enought operands!");
             }
 
-            return (dynamic)(this.operands[0].Value) % (dynamic)(this.operands[1].Value);
+            if (this.Associativity == OperationAssociativity.LeftToRight)
+            {
+                return (dynamic)(this.operands[0].Value) % (dynamic)(this.operands[1].Value); 
+            }
+            else
+            {
+                return (dynamic)(this.operands[1].Value) % (dynamic)(this.operands[0].Value);
+            }
         }
 
         public override OperationPriority Priority { get; }
