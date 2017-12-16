@@ -53,7 +53,7 @@
     <Compile Include="Operations\Enums\OperationAssociativity.cs" />
     <Compile Include="Operations\Enums\OperationPriority.cs" />
     <Compile Include="Operations\Models\Addition.cs" />
-    <Compile Include="Operations\Models\BinaryAssociativityOperation.cs" />
+    <Compile Include="Operations\Models\BinaryOperation.cs" />
     <Compile Include="Operations\Models\Division.cs" />
     <Compile Include="Operations\Models\Modulo.cs" />
     <Compile Include="Operations\Models\Multiplication.cs" />

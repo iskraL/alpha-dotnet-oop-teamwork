@@ -7,7 +7,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    class Addition<T> : BinaryAssociativityOperation<T> where T : struct
+    class Addition<T> : BinaryOperation<T> where T : struct
     {
         public Addition()
         {

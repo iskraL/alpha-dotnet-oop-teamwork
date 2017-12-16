@@ -9,9 +9,9 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    abstract class BinaryAssociativityOperation<T> : IPriorityOperation<T>, IAssociativityOperation<T> where T : struct
+    abstract class BinaryOperation<T> : IPriorityOperation<T>, IAssociativityOperation<T> where T : struct
     {
-        protected BinaryAssociativityOperation()
+        protected BinaryOperation()
         {
             this.operands = new List<IOperand<T>>();
             this.Associativity = OperationAssociativity.LeftToRight;
