@@ -7,7 +7,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    class Modulo<T> : BinaryOperation<T> where T : struct 
+    internal class Modulo<T> : BinaryOperation<T> where T : struct 
     {
         public Modulo()
         {

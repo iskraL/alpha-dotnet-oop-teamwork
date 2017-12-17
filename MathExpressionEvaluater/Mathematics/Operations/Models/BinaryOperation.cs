@@ -9,7 +9,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    abstract class BinaryOperation<T> : IPriorityOperation<T>, IAssociativityOperation<T> where T : struct
+    internal abstract class BinaryOperation<T> : IPriorityOperation<T>, IAssociativityOperation<T> where T : struct
     {
         protected BinaryOperation()
         {

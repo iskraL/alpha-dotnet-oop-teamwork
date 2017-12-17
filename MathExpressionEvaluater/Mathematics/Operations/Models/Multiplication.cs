@@ -8,7 +8,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    class Multiplication<T> : BinaryOperation<T> where T : struct 
+    internal class Multiplication<T> : BinaryOperation<T> where T : struct 
     {
         public Multiplication()
         {

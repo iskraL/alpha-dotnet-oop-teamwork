@@ -7,7 +7,7 @@ using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operands.Models
 {
-    class Float : IOperand<float>
+    internal struct Float : IOperand<float>
     {
         public Float(float value)
         {

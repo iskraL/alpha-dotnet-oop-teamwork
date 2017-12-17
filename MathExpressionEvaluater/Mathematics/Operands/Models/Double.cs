@@ -7,7 +7,7 @@ using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operands.Models
 {
-    class Double : IOperand<double>
+    internal struct Double : IOperand<double>
     {
         public Double(double value)
         {

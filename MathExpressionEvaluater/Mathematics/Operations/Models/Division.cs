@@ -8,7 +8,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    class Division<T> : BinaryOperation<T> where T : struct 
+    internal class Division<T> : BinaryOperation<T> where T : struct 
     {
         public Division()
         {

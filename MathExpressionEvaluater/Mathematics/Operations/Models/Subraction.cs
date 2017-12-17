@@ -7,7 +7,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    class Subraction<T> : BinaryOperation<T> where T : struct 
+    internal class Subraction<T> : BinaryOperation<T> where T : struct 
     {
         public Subraction()
         {

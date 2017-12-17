@@ -7,7 +7,7 @@ using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operations.Contracts
 {
-    interface IOperation<T> where T : struct
+    internal interface IOperation<T> where T : struct
     {
         void AddOperand(IOperand<T> operand);
         T GetResult();

@@ -7,7 +7,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Contracts
 {
-    interface IAssociativityOperation<T> : IOperation<T> where T : struct
+    internal interface IAssociativityOperation<T> : IOperation<T> where T : struct
     {
         OperationAssociativity Associativity { get; }
     }

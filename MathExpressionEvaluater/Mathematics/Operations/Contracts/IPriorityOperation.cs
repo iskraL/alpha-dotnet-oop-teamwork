@@ -7,7 +7,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Contracts
 {
-    interface IPriorityOperation<T> : IOperation<T> where T : struct
+    internal interface IPriorityOperation<T> : IOperation<T> where T : struct
     {
         OperationPriority Priority { get; }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mathematics.Operations.Enums
 {
-    enum OperationAssociativity
+    internal enum OperationAssociativity
     {
         LeftToRight,
         RightToLeft

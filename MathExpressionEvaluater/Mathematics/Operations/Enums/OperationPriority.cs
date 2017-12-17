@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mathematics.Operations.Enums
 {
-    enum OperationPriority
+    internal enum OperationPriority
     {
         Low,
         MidLow,

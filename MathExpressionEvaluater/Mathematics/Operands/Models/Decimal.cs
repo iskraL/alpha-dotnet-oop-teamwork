@@ -7,7 +7,7 @@ using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operands.Models
 {
-    class Decimal : IOperand<decimal>
+    internal struct Decimal : IOperand<decimal>
     {
         public Decimal(decimal value)
         {
