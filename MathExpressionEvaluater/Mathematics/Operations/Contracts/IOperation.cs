@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mathematics.Operands.Contracts;
+﻿using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operations.Contracts
 {
-    internal interface IOperation<T> where T : struct
+    internal interface IOperation
     {
-        void AddOperand(IOperand<T> operand);
-        T GetResult();
-        bool IsComplete();
+        void AddOperand(IOperand operand);
+        IOperand Result { get; }
+        bool IsComplete { get; }
     }
 }

@@ -1,36 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mathematics.Operations.Enums;
+using Mathematics.Operands.Contracts;
+using Mathematics.Operands.Models;
 
 namespace Mathematics.Operations.Models
 {
-    internal class Addition<T> : BinaryOperation<T> where T : struct
+    internal class Addition : BinaryOperation
     {
-        public Addition()
+        protected override IOperand ApplyOperation(IOperand o1, IOperand o2)
         {
-            this.Priority = OperationPriority.MidHigh;
+            if (o1 is IntType && o2 is IntType)
+            {
+                return new IntType( ((IntType)o1).Value + ((IntType)o2).Value );
+            }
+            else if (o1 is FloatType && o2 is FloatType)
+            {
+                return new FloatType(((FloatType)o1).Value + ((FloatType)o2).Value);
+            }
+            else if (o1 is DoubleType && o2 is DoubleType)
+            {
+                return new DoubleType(((DoubleType)o1).Value + ((FloatType)o2).Value);
+            }
+            else if (o1 is DecimalType && o2 is DecimalType)
+            {
+                return new DecimalType(((DecimalType)o1).Value + ((DecimalType)o2).Value);
+            }
+
+            throw new NotSupportedException("Operation not supported on IOperand args");
         }
-
-        public override T GetResult()
-        {
-            if (!this.IsComplete())
-            {
-                throw new InvalidOperationException("Not enought operands!");
-            }
-
-            if (this.Associativity == OperationAssociativity.LeftToRight)
-            {
-                return (dynamic)(this.operands[0].Value) + (dynamic)(this.operands[1].Value); 
-            }
-            else
-            {
-                return (dynamic)(this.operands[1].Value) + (dynamic)(this.operands[0].Value);
-            }
-        }
-
-        public override OperationPriority Priority { get; }
     }
 }

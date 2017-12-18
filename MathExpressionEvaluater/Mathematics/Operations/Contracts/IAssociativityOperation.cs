@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mathematics.Operations.Enums;
+﻿using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Contracts
 {
-    internal interface IAssociativityOperation<T> : IOperation<T> where T : struct
+    internal interface IAssociativityOperation : IOperation
     {
         OperationAssociativity Associativity { get; }
     }

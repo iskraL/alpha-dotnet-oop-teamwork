@@ -1,41 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mathematics.Operands.Contracts;
 using Mathematics.Operations.Contracts;
 using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    internal abstract class BinaryOperation<T> : IPriorityOperation<T>, IAssociativityOperation<T> where T : struct
+    internal abstract class BinaryOperation : IAssociativityOperation
     {
         protected BinaryOperation()
         {
-            this.operands = new List<IOperand<T>>();
+            this.Operands = new List<IOperand>();
             this.Associativity = OperationAssociativity.LeftToRight;
         }
 
-        protected IList<IOperand<T>> operands;
-
-        public abstract OperationPriority Priority { get; }
+        protected IList<IOperand> Operands { get; }
 
         public OperationAssociativity Associativity { get; }
 
-        public abstract T GetResult();
-
-        public void AddOperand(IOperand<T> operand)
+        public IOperand Result
         {
-            if (!this.IsComplete())
+            get
             {
-                this.operands.Add(operand);
+                if (!this.IsComplete)
+                {
+                    throw new InvalidOperationException("Too few operands");
+                }
+
+                switch (this.Associativity)
+                {
+                    case OperationAssociativity.LeftToRight:
+                        return ApplyOperation(Operands[0], Operands[1]);
+                    default:
+                        return ApplyOperation(Operands[1], Operands[0]);
+                }
             }
         }
 
-        public bool IsComplete()
+        public bool IsComplete => this.Operands.Count == 2;
+
+        public void AddOperand(IOperand operand)
         {
-            return operands.Count == 2;
+            if (!this.IsComplete)
+            {
+                this.Operands.Add(operand);
+            }
         }
+
+        protected abstract IOperand ApplyOperation(IOperand o1, IOperand o2);
+        
     }
 }

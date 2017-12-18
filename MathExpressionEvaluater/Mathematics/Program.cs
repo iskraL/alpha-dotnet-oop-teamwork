@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mathematics.Operands.Contracts;
 using Mathematics.Operands.Models;
 using Mathematics.Operations.Models;
@@ -13,15 +9,16 @@ namespace Mathematics
     {
         static void Main(string[] args)
         {
-            IOperand<int> o1 =  new Int(11);
-            IOperand<float> o2 = new Float(2.3f);
+            IOperand o1 =  new DecimalType(11);
+            IOperand o2 = new DecimalType(2);
 
-            Multiplication<float> m = new Multiplication<float>();
+            Division m = new Division();
 
-            //m.AddOperand(o1);
             m.AddOperand(o2);
+            m.AddOperand(o1);
 
-            Console.WriteLine(m.GetResult());
+            IOperand result = m.Result;
+            Console.WriteLine(((DecimalType)result).Value);
         }
     }
 }

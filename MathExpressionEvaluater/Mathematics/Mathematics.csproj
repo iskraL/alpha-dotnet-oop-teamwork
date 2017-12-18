@@ -43,15 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Operands\Contracts\IOperand.cs" />
-    <Compile Include="Operands\Models\Decimal.cs" />
-    <Compile Include="Operands\Models\Double.cs" />
-    <Compile Include="Operands\Models\Float.cs" />
-    <Compile Include="Operands\Models\Int.cs" />
+    <Compile Include="Operands\Models\DecimalType.cs" />
+    <Compile Include="Operands\Models\DoubleType.cs" />
+    <Compile Include="Operands\Models\FloatType.cs" />
+    <Compile Include="Operands\Models\IntType.cs" />
     <Compile Include="Operations\Contracts\IOperation.cs" />
     <Compile Include="Operations\Contracts\IAssociativityOperation.cs" />
-    <Compile Include="Operations\Contracts\IPriorityOperation.cs" />
     <Compile Include="Operations\Enums\OperationAssociativity.cs" />
-    <Compile Include="Operations\Enums\OperationPriority.cs" />
     <Compile Include="Operations\Models\Addition.cs" />
     <Compile Include="Operations\Models\BinaryOperation.cs" />
     <Compile Include="Operations\Models\Division.cs" />
