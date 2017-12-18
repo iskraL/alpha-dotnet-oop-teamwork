@@ -18,7 +18,7 @@ namespace Mathematics.Operations.Models
             }
             else if (o1 is DoubleType && o2 is DoubleType)
             {
-                return new DoubleType(((DoubleType)o1).Value * ((FloatType)o2).Value);
+                return new DoubleType(((DoubleType)o1).Value * ((DoubleType)o2).Value);
             }
             else if (o1 is DecimalType && o2 is DecimalType)
             {
