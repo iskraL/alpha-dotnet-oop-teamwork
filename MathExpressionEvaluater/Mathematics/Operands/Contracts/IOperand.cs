@@ -1,7 +1,7 @@
 ﻿namespace Mathematics.Operands.Contracts
 {
-    internal interface IOperand
+    internal interface IOperand<T>
     {
-        //Empty on purpose
+        T Value { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Mathematics.Operations.Contracts
 {
-    internal interface IAssociativityOperation : IOperation
+    internal interface IAssociativityOperation
     {
         OperationAssociativity Associativity { get; }
     }

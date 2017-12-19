@@ -44,18 +44,13 @@
   <ItemGroup>
     <Compile Include="Operands\Contracts\IOperand.cs" />
     <Compile Include="Operands\Models\DecimalType.cs" />
-    <Compile Include="Operands\Models\DoubleType.cs" />
-    <Compile Include="Operands\Models\FloatType.cs" />
     <Compile Include="Operands\Models\IntType.cs" />
     <Compile Include="Operations\Contracts\IOperation.cs" />
     <Compile Include="Operations\Contracts\IAssociativityOperation.cs" />
     <Compile Include="Operations\Enums\OperationAssociativity.cs" />
-    <Compile Include="Operations\Models\Addition.cs" />
+    <Compile Include="Operations\Models\DecimalAddition.cs" />
+    <Compile Include="Operations\Models\IntAddition.cs" />
     <Compile Include="Operations\Models\BinaryOperation.cs" />
-    <Compile Include="Operations\Models\Division.cs" />
-    <Compile Include="Operations\Models\Modulo.cs" />
-    <Compile Include="Operations\Models\Multiplication.cs" />
-    <Compile Include="Operations\Models\Subraction.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

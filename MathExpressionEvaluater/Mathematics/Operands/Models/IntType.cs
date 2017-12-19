@@ -1,13 +1,15 @@
-﻿using Mathematics.Operands.Contracts;
+﻿using System;
+using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operands.Models
 {
-    internal struct IntType : IOperand
+    internal struct IntType : IOperand<int>
     {
         public IntType(int value)
         {
             this.Value = value;
         }
-        public int Value { get; }
+
+        public int Value { get; set; }
     }
 }

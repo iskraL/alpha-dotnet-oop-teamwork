@@ -2,10 +2,10 @@
 
 namespace Mathematics.Operations.Contracts
 {
-    internal interface IOperation
+    internal interface IOperation<T>
     {
-        void AddOperand(IOperand operand);
-        IOperand Result { get; }
+        void AddOperand(IOperand<T> operand);
+        IOperand<T> Result { get; }
         bool IsComplete { get; }
     }
 }

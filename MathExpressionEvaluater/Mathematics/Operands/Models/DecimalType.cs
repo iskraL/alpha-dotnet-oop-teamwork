@@ -2,12 +2,13 @@
 
 namespace Mathematics.Operands.Models
 {
-    internal struct DecimalType : IOperand
+    internal struct DecimalType : IOperand<decimal>
     {
         public DecimalType(decimal value)
         {
             this.Value = value;
         }
-        public decimal Value { get; }
+
+        public decimal Value { get; set; }
     }
 }

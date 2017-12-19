@@ -6,19 +6,19 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    internal abstract class BinaryOperation : IAssociativityOperation
+    internal abstract class BinaryOperation<T> : IOperation<T>, IAssociativityOperation
     {
         protected BinaryOperation()
         {
-            this.Operands = new List<IOperand>();
+            this.Operands = new List<IOperand<T>>();
             this.Associativity = OperationAssociativity.LeftToRight;
         }
 
-        protected IList<IOperand> Operands { get; }
+        protected IList<IOperand<T>> Operands { get; }
 
         public OperationAssociativity Associativity { get; }
 
-        public IOperand Result
+        public IOperand<T> Result
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Mathematics.Operations.Models
 
         public bool IsComplete => this.Operands.Count == 2;
 
-        public void AddOperand(IOperand operand)
+        public void AddOperand(IOperand<T> operand)
         {
             if (!this.IsComplete)
             {
@@ -47,7 +47,7 @@ namespace Mathematics.Operations.Models
             }
         }
 
-        protected abstract IOperand ApplyOperation(IOperand o1, IOperand o2);
+        protected abstract IOperand<T> ApplyOperation(IOperand<T> o1, IOperand<T> o2);
         
     }
 }
