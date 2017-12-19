@@ -1,6 +1,6 @@
 ﻿namespace Mathematics.Operands.Contracts
 {
-    internal interface IOperand<T>
+    public interface IOperand<T>
     {
         T Value { get; set; }
     }

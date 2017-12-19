@@ -2,7 +2,7 @@
 
 namespace Mathematics.Operations.Contracts
 {
-    internal interface IOperation<T>
+    public interface IOperation<T>
     {
         void AddOperand(IOperand<T> operand);
         IOperand<T> Result { get; }

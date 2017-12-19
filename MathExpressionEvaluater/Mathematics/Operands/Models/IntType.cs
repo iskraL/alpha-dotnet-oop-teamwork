@@ -3,7 +3,7 @@ using Mathematics.Operands.Contracts;
 
 namespace Mathematics.Operands.Models
 {
-    internal struct IntType : IOperand<int>
+    public struct IntType : IOperand<int>
     {
         public IntType(int value)
         {

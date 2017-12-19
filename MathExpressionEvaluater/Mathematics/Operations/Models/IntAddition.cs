@@ -3,11 +3,11 @@ using Mathematics.Operands.Models;
 
 namespace Mathematics.Operations.Models
 {
-    internal class IntAddition : BinaryOperation<int>
+    public class IntAddition : BinaryOperation<int>
     {
-        protected override IOperand<int> ApplyOperation(IOperand<int> o1, IOperand<int> o2)
+        protected override IOperand<int> ApplyOperation(IOperand<int> operand1, IOperand<int> operand2)
         {
-            return new IntType(o1.Value + o2.Value);
+            return new IntType(operand1.Value + operand2.Value);
         }
     }
 }

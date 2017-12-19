@@ -1,6 +1,6 @@
 ﻿namespace Mathematics.Operations.Enums
 {
-    internal enum OperationAssociativity
+    public enum OperationAssociativity
     {
         LeftToRight,
         RightToLeft
