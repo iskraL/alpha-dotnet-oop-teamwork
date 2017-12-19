@@ -5,9 +5,9 @@ using Mathematics.Operations.Models;
 
 namespace Mathematics
 {
-    class Program
+    class Startup
     {
-        static void Main(string[] args)
+        static void Main()
         {
             IOperand o1 =  new DecimalType(11);
             IOperand o2 = new DecimalType(2);

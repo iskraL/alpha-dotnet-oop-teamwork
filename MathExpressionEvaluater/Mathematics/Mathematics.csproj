@@ -56,7 +56,7 @@
     <Compile Include="Operations\Models\Modulo.cs" />
     <Compile Include="Operations\Models\Multiplication.cs" />
     <Compile Include="Operations\Models\Subraction.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
