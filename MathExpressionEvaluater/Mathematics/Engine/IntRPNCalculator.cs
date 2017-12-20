@@ -1,8 +1,6 @@
 ﻿using System;
 using Mathematics.Operands.Contracts;
-using Mathematics.Operands.Models;
 using Mathematics.Operations.Contracts;
-using Mathematics.Operations.Models;
 
 namespace Mathematics.Engine
 {
