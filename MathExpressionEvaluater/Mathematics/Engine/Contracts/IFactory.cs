@@ -1,4 +1,5 @@
-﻿using Mathematics.Operations.Contracts;
+﻿using Mathematics.Operands.Contracts;
+using Mathematics.Operations.Contracts;
 
 namespace Mathematics.Core.Contracts
 {
@@ -15,5 +16,8 @@ namespace Mathematics.Core.Contracts
 
         IOperation<int> CreateIntMultiplicationOperation();
         IOperation<decimal> CreateDecimalMultiplicationOperation();
+
+        IOperand<int> GetIntTypeOperand(int num);
+        IOperand<decimal> GetDecimalTypeOperand(decimal num);
     }
 }

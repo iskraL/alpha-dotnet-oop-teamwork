@@ -1,5 +1,6 @@
 ﻿using System;
 using Mathematics.Core.Contracts;
+using Mathematics.Operands.Contracts;
 using Mathematics.Operations.Contracts;
 using Mathematics.Operations.Models;
 
@@ -43,6 +44,16 @@ namespace Mathematics.Core.Engine
         }
 
         public IOperation<decimal> CreateDecimalMultiplicationOperation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IOperand<int> GetIntTypeOperand(int num)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IOperand<decimal> GetDecimalTypeOperand(decimal num)
         {
             throw new NotImplementedException();
         }
