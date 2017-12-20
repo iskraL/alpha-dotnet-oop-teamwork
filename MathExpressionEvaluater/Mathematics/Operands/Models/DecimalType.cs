@@ -2,7 +2,7 @@
 
 namespace Mathematics.Operands.Models
 {
-    internal struct DecimalType : IOperand<decimal>
+    public struct DecimalType : IOperand<decimal>
     {
         public DecimalType(decimal value)
         {

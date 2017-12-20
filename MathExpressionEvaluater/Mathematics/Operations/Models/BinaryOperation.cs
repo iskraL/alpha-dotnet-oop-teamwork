@@ -6,7 +6,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    internal abstract class BinaryOperation<T> : IOperation<T>, IAssociativityOperation
+    public abstract class BinaryOperation<T> : IOperation<T>, IAssociativityOperation
     {
         protected BinaryOperation()
         {
@@ -27,13 +27,7 @@ namespace Mathematics.Operations.Models
                     throw new InvalidOperationException("Too few operands");
                 }
 
-                switch (this.Associativity)
-                {
-                    case OperationAssociativity.LeftToRight:
-                        return ApplyOperation(Operands[0], Operands[1]);
-                    default:
-                        return ApplyOperation(Operands[1], Operands[0]);
-                }
+                return ApplyOperation(Operands[0], Operands[1]);
             }
         }
 
@@ -47,7 +41,7 @@ namespace Mathematics.Operations.Models
             }
         }
 
-        protected abstract IOperand<T> ApplyOperation(IOperand<T> o1, IOperand<T> o2);
+        protected abstract IOperand<T> ApplyOperation(IOperand<T> operand1, IOperand<T> operand2);
         
     }
 }

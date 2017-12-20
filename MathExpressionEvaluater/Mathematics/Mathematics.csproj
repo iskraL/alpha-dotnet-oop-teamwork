@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Contracts\IRPNCalculator.cs" />
+    <Compile Include="Engine\RPNCalculator.cs" />
     <Compile Include="Operands\Contracts\IOperand.cs" />
     <Compile Include="Operands\Models\DecimalType.cs" />
     <Compile Include="Operands\Models\IntType.cs" />
@@ -49,8 +51,14 @@
     <Compile Include="Operations\Contracts\IAssociativityOperation.cs" />
     <Compile Include="Operations\Enums\OperationAssociativity.cs" />
     <Compile Include="Operations\Models\DecimalAddition.cs" />
+    <Compile Include="Operations\Models\DecimalDivision.cs" />
+    <Compile Include="Operations\Models\DecimalMultiplication.cs" />
+    <Compile Include="Operations\Models\DecimalSubstraction.cs" />
     <Compile Include="Operations\Models\IntAddition.cs" />
     <Compile Include="Operations\Models\BinaryOperation.cs" />
+    <Compile Include="Operations\Models\IntDivision.cs" />
+    <Compile Include="Operations\Models\IntMultiplication.cs" />
+    <Compile Include="Operations\Models\IntSubstraction.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
