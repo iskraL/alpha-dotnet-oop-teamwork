@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Contracts\IRPNCalculator.cs" />
+    <Compile Include="Engine\RPNCalculator.cs" />
     <Compile Include="Operands\Contracts\IOperand.cs" />
     <Compile Include="Operands\Models\DecimalType.cs" />
     <Compile Include="Operands\Models\IntType.cs" />
