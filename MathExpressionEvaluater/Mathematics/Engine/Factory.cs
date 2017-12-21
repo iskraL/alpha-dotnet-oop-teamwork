@@ -5,7 +5,7 @@ using Mathematics.Operands.Models;
 using Mathematics.Operations.Contracts;
 using Mathematics.Operations.Models;
 
-namespace Mathematics.Core.Engine
+namespace Mathematics.Engine
 {
     internal class Factory : IFactory
     {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Mathematics.Core.Engine;
 using Mathematics.Engine.Contracts;
 using Mathematics.Operands.Contracts;
 using Mathematics.Operations.Contracts;
