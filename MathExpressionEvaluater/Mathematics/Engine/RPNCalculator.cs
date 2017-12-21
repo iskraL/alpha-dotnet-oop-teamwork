@@ -14,18 +14,26 @@ namespace Mathematics.Engine
         protected readonly Stack<IOperand<T>> machineStack;
         protected readonly Factory factory;
 
+        protected RPNCalculator()
+        {
+            this.machineStack = new Stack<IOperand<T>>();
+            this.factory = new Factory();
+        }
+
         public IOperand<T> EvaluateRPNExpression(string[] tokens)
         {
+            this.machineStack.Clear();
+
             foreach (var token in tokens)
             {
                 if (Table.Operations.ContainsKey(token))
                 {
-                    var operation = GetOperation(token);
+                    var operation = ParseOperation(token);
                     EvaluateOperation(operation);
                 }
                 else
                 {
-                    var operand = GetOperand(token);
+                    var operand = ParseOperand(token);
                     this.machineStack.Push(operand);
                 }
             }
@@ -45,20 +53,20 @@ namespace Mathematics.Engine
                 case 0:
                 case 1:
                     throw new InvalidOperationException("Ivalid mathematical expression");
-                case 2:
-                    var n2 = this.machineStack.Pop();
-                    var n1 = this.machineStack.Pop();
+                default:
+                    var o2 = this.machineStack.Pop();
+                    var o1 = this.machineStack.Pop();
 
-                    operation.AddOperand(n1);
-                    operation.AddOperand(n2);
+                    operation.AddOperand(o1);
+                    operation.AddOperand(o2);
 
                     this.machineStack.Push(operation.Result);
                     break;
             }
         }
 
-        protected abstract IOperation<T> GetOperation(string token);
+        protected abstract IOperation<T> ParseOperation(string token);
 
-        protected abstract IOperand<T> GetOperand(string token);
+        protected abstract IOperand<T> ParseOperand(string token);
     }
 }

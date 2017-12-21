@@ -1,17 +1,18 @@
 ﻿using System;
 using Mathematics.Operands.Contracts;
 using Mathematics.Operations.Contracts;
+using Mathematics.Operations.Models;
 
 namespace Mathematics.Engine
 {
     internal class IntRPNCalculator : RPNCalculator<int>
     {
-        protected override IOperation<int> GetOperation(string token)
+        protected override IOperation<int> ParseOperation(string token)
         {
-            throw new NotImplementedException();
+            return new IntAddition();
         }
 
-        protected override IOperand<int> GetOperand(string token)
+        protected override IOperand<int> ParseOperand(string token)
         {
             int value;
             if (int.TryParse(token, out value))

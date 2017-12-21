@@ -1,6 +1,7 @@
 ﻿using System;
 using Mathematics.Core.Contracts;
 using Mathematics.Operands.Contracts;
+using Mathematics.Operands.Models;
 using Mathematics.Operations.Contracts;
 using Mathematics.Operations.Models;
 
@@ -50,7 +51,7 @@ namespace Mathematics.Core.Engine
 
         public IOperand<int> GetIntTypeOperand(int num)
         {
-            throw new NotImplementedException();
+            return new IntType(num);
         }
 
         public IOperand<decimal> GetDecimalTypeOperand(decimal num)
