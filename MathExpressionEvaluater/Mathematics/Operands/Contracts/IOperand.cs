@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mathematics.Operands.Contracts
+﻿namespace Mathematics.Operands.Contracts
 {
     public interface IOperand
     {

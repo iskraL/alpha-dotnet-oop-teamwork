@@ -1,5 +1,4 @@
-﻿using Mathematics.Operands.Contracts;
-using Mathematics.Operations.Contracts;
+﻿using Mathematics.Operations.Contracts;
 
 namespace Mathematics.General.Contracts
 {

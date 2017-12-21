@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Mathematics.Engine;
 using Mathematics.Operations.Contracts;
 
 namespace Mathematics.General.Models
