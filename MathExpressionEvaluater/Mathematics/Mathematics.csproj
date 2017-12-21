@@ -42,27 +42,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engine\Contracts\IFactory.cs" />
-    <Compile Include="Engine\Contracts\IRPNCalculator.cs" />
-    <Compile Include="Engine\Factory.cs" />
-    <Compile Include="Engine\IntRPNCalculator.cs" />
-    <Compile Include="Engine\RPNCalculator.cs" />
+    <Compile Include="General\Contracts\IFactory.cs" />
+    <Compile Include="Engine\Contracts\IReversePolishNotationCalculator.cs" />
+    <Compile Include="General\Models\Factory.cs" />
+    <Compile Include="Engine\ReversePolishNotationCalculator.cs" />
     <Compile Include="Operands\Contracts\IOperand.cs" />
-    <Compile Include="Operands\Models\DecimalType.cs" />
     <Compile Include="Operands\Models\IntType.cs" />
     <Compile Include="Operations\Contracts\IOperation.cs" />
     <Compile Include="Operations\Contracts\IAssociativityOperation.cs" />
     <Compile Include="Operations\Enums\OperationAssociativity.cs" />
-    <Compile Include="Operations\Models\DecimalAddition.cs" />
-    <Compile Include="Operations\Models\DecimalDivision.cs" />
-    <Compile Include="Operations\Models\DecimalMultiplication.cs" />
-    <Compile Include="Operations\Models\DecimalSubstraction.cs" />
-    <Compile Include="Operations\Models\IntAddition.cs" />
+    <Compile Include="Operations\Models\Addition.cs" />
+    <Compile Include="Operations\Models\BitwiseAND.cs" />
+    <Compile Include="Operations\Models\BitwiseExclusiveOR.cs" />
+    <Compile Include="Operations\Models\BitwiseInclusiveOR.cs" />
+    <Compile Include="Operations\Models\BitwiseLeftShift.cs" />
+    <Compile Include="Operations\Models\BitwiseRightShift.cs" />
+    <Compile Include="Operations\Models\Division.cs" />
+    <Compile Include="Operations\Models\Modulo.cs" />
+    <Compile Include="Operations\Models\Multiplication.cs" />
+    <Compile Include="Operations\Models\Substraction.cs" />
     <Compile Include="Operations\Models\BinaryOperation.cs" />
-    <Compile Include="Operations\Models\IntDivision.cs" />
-    <Compile Include="Operations\Models\IntMultiplication.cs" />
-    <Compile Include="Operations\Models\IntSubstraction.cs" />
-    <Compile Include="Operations\Models\Table.cs" />
+    <Compile Include="General\Models\Table.cs" />
+    <Compile Include="Operations\Models\Operation.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

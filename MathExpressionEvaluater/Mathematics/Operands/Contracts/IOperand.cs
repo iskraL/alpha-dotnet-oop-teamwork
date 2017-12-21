@@ -1,7 +1,9 @@
-﻿namespace Mathematics.Operands.Contracts
+﻿using System;
+
+namespace Mathematics.Operands.Contracts
 {
-    public interface IOperand<T>
+    public interface IOperand
     {
-        T Value { get; set; }
+        int Value { get; }
     }
 }
