@@ -1,4 +1,5 @@
-﻿using Mathematics.Operations.Enums;
+﻿using Mathematics.Engine.Contracts;
+using Mathematics.Operations.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mathematics.Engine
 {
-    class InfixToPostfixConverter
+    internal class InfixToPostfixConverter : IInfixToPostfixConverter
     {
         public Token[] Tokenize(string expression)
         {
@@ -35,6 +36,7 @@ namespace Mathematics.Engine
             }
             return tokens.ToArray();
         }
+
         private string[] SplitExpression(string expression)
         {
             expression = expression.Replace("+", " + ");

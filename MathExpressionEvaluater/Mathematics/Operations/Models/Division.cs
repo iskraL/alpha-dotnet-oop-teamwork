@@ -3,7 +3,7 @@ using Mathematics.Operands.Models;
 
 namespace Mathematics.Operations.Models
 {
-    public class Division : BinaryOperation
+    internal class Division : BinaryOperation
     {
         protected override IOperand ApplyOperation(IOperand o1, IOperand o2)
         {

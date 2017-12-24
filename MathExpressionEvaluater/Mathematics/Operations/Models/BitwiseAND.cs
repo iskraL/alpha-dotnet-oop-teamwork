@@ -3,7 +3,7 @@ using Mathematics.Operands.Models;
 
 namespace Mathematics.Operations.Models
 {
-    class BitwiseAND : BinaryOperation
+    internal class BitwiseAND : BinaryOperation
     {
         protected override IOperand ApplyOperation(IOperand o1, IOperand o2)
         {

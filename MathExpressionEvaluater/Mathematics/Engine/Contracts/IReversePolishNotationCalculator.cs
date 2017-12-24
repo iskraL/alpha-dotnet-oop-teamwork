@@ -2,7 +2,7 @@
 
 namespace Mathematics.Engine.Contracts
 {
-    interface IReversePolishNotationCalculator
+    internal interface IReversePolishNotationCalculator
     {
         IOperand EvaluateRPNExpression(string[] tokens);
     }

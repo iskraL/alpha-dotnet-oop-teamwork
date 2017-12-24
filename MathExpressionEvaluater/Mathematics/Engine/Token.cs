@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mathematics.Engine
 {
-    class Token
+    internal class Token
     {
         private int value;
         private OperationAssociativity associativity;

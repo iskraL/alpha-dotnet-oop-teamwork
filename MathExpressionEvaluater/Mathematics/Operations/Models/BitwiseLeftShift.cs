@@ -3,7 +3,7 @@ using Mathematics.Operands.Models;
 
 namespace Mathematics.Operations.Models
 {
-    class BitwiseLeftShift : BinaryOperation
+    internal class BitwiseLeftShift : BinaryOperation
     {
         protected override IOperand ApplyOperation(IOperand o1, IOperand o2)
         {

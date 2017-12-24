@@ -2,7 +2,7 @@
 
 namespace Mathematics.Operations.Models
 {
-    public abstract class BinaryOperation : Operation
+    internal abstract class BinaryOperation : Operation
     {
         protected BinaryOperation() : 
             base(OperationAssociativity.LeftToRight)

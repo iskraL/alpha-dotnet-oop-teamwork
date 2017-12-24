@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mathematics.Engine
 {
-    public enum TokenType
+    internal enum TokenType
     {
         Operand,
         Operator,

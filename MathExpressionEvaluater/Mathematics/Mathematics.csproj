@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Contracts\IInfixToPostfixConverter.cs" />
+    <Compile Include="Engine\Contracts\IToken.cs" />
     <Compile Include="Engine\InfixToPostfixConverter.cs" />
     <Compile Include="Engine\Token.cs" />
     <Compile Include="Engine\TokenType.cs" />

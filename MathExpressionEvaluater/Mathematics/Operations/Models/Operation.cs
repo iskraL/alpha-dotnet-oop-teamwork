@@ -6,7 +6,7 @@ using Mathematics.Operations.Enums;
 
 namespace Mathematics.Operations.Models
 {
-    public abstract class Operation : IOperation, IAssociativityOperation
+    internal abstract class Operation : IOperation, IAssociativityOperation
     {
         protected Operation(OperationAssociativity associativity)
         {

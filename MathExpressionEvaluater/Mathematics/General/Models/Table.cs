@@ -4,7 +4,7 @@ using Mathematics.Operations.Contracts;
 
 namespace Mathematics.General.Models
 {
-    static class Table
+    internal static class Table
     {
         private static readonly Dictionary<string, int> operations;
         private static readonly Factory factory;
