@@ -15,6 +15,7 @@ namespace Mathematics.General.Models
 
             operations = new Dictionary<string, int>()
             {
+                {"_", 7 },
                 { "*", 6 },
                 { "/", 6 },
                 { "%", 6 },

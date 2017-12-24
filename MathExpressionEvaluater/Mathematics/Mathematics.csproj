@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\InfixToPostfixConverter.cs" />
+    <Compile Include="Engine\Token.cs" />
+    <Compile Include="Engine\TokenType.cs" />
     <Compile Include="General\Contracts\IFactory.cs" />
     <Compile Include="Engine\Contracts\IReversePolishNotationCalculator.cs" />
     <Compile Include="General\Models\Factory.cs" />
