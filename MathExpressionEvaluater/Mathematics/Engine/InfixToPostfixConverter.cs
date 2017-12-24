@@ -13,27 +13,26 @@ namespace Mathematics.Engine
         {
             string[] splitExpression = SplitExpression(expression);
             IList<Token> tokens = new List<Token>();
-            int i = 0;
-            while(i<splitExpression.Length)
+            int index = 0;
+            while(index<splitExpression.Length)
             {
-                Token token = Token.StringToTokenParser(splitExpression[i]);
-                if (splitExpression[i] == "-" && splitExpression[i+1]!= "(")
+                Token token = Token.StringToTokenParser(splitExpression[index]);
+                if (splitExpression[index] == "-" && splitExpression[index+1]!= "(")
                 {
                     if (tokens.Count == 0
                         || tokens[tokens.Count-1].Type==TokenType.LeftBracket
                         || tokens[tokens.Count - 1].Type == TokenType.Operator)
                     {
-                        int v = 0;
-                        i++;
-                        if((int.TryParse(splitExpression[i], out v))){
-                            token.Value = (0 - v).ToString();
+                        int nextValue = 0;
+                        index++;
+                        if((int.TryParse(splitExpression[index], out nextValue))){
+                            token.Value = (0 - nextValue).ToString();
                         }
                     }
                 }
                 tokens.Add(token);
-                i++;
+                index++;
             }
-
             return tokens.ToArray();
         }
         private string[] SplitExpression(string expression)
@@ -58,7 +57,7 @@ namespace Mathematics.Engine
         {
             int index = 0;
             Queue<Token> outputQueue = new Queue<Token>();
-            Stack<Token> operatorStack = new Stack<Token>();
+            Stack<Token> operatorsStack = new Stack<Token>();
             while (index < tokens.Count())
             {
                 Token token = tokens[index];
@@ -68,54 +67,53 @@ namespace Mathematics.Engine
                 }
                 else if (token.Type == TokenType.Operator)
                 {
-                    while (operatorStack.Count != 0)
+                    while (operatorsStack.Count != 0)
                     {
-                        Token operator2 = operatorStack.Peek();
-                        if(operator2.Type != TokenType.Operator)
+                       Token currentOperator = operatorsStack.Peek();
+                        if(currentOperator.Type != TokenType.Operator)
                         {
                             break;
                         }
-                        else if(token.Associativity==OperationAssociativity.LeftToRight &&token.Precedence==operator2.Precedence ||
-                            token.Precedence < operator2.Precedence)
+                        else if(token.Associativity==OperationAssociativity.LeftToRight &&token.Precedence== currentOperator.Precedence ||
+                            token.Precedence < currentOperator.Precedence)
                         {
-                            outputQueue.Enqueue(operatorStack.Pop());
-                           
+                            outputQueue.Enqueue(operatorsStack.Pop());                 
                         }
                         else
                         {
                             break;
                         }
                     }
-                    operatorStack.Push(token);
+                    operatorsStack.Push(token);
                 }
                 else if (token.Type == TokenType.LeftBracket)
                 {
-                    operatorStack.Push(token);
+                    operatorsStack.Push(token);
                 }
                 else if (token.Type == TokenType.RightBracket)
                 {
-                    while(operatorStack.Peek().Type != TokenType.LeftBracket)
+                    while(operatorsStack.Peek().Type != TokenType.LeftBracket)
                     {
-                        outputQueue.Enqueue(operatorStack.Pop());
-                        if (operatorStack.Count() == 0)
+                        outputQueue.Enqueue(operatorsStack.Pop());
+                        if (operatorsStack.Count() == 0)
                         {
                             throw new Exception("Missmatched brackets");
                         }
                     }
-                    operatorStack.Pop();
+                    operatorsStack.Pop();
                 }
                 index++;
             }
-            while(operatorStack.Count != 0)
+            while(operatorsStack.Count != 0)
             {
-                if(operatorStack.Peek().Type == TokenType.LeftBracket 
-                    || operatorStack.Peek().Type == TokenType.RightBracket)
+                if(operatorsStack.Peek().Type == TokenType.LeftBracket 
+                    || operatorsStack.Peek().Type == TokenType.RightBracket)
                 {
-                            throw new Exception("Missmatched brackets");
+                    throw new Exception("Missmatched brackets");
                 }
                 else
                 {
-                    outputQueue.Enqueue(operatorStack.Pop());
+                    outputQueue.Enqueue(operatorsStack.Pop());
                 }
             }
            return outputQueue;

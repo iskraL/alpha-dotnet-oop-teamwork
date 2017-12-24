@@ -11,24 +11,21 @@ namespace Mathematics.Engine
     class Token
     {
         private int value;
-        private string operatorSymbol;
-        private int parametersCount;
-        private TokenType type;
         private OperationAssociativity associativity;
         private int precedence;
+
         public Token()
         {
-            this.OperatorSymbol = operatorSymbol;
-            this.ParametersCont = parametersCount;
-            this.Type = type;
             this.Associativity = associativity;
             this.Precedence = precedence;
         }
-        public string Value { get;  set; }
+
+        public string Value { get; set; }
         public string OperatorSymbol { get; private set; }
-        public int ParametersCont { get; private set; }
+        public int ParametersCount { get; private set; }//Can be used if unary operations are added
         public TokenType Type { get; private set; }
         public OperationAssociativity Associativity { get; private set; }
+
         public int Precedence
         {
             get
@@ -66,31 +63,23 @@ namespace Mathematics.Engine
                 {
                     case "+":
                         token.OperatorSymbol = "+";
-                        token.associativity = OperationAssociativity.LeftToRight;
-                        token.ParametersCont = 2;
+                        token.Associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
-
                         break;
                     case "-":
                         token.OperatorSymbol = "-";
                         token.associativity = OperationAssociativity.LeftToRight;
-                        token.ParametersCont = 2;
                         token.Value = str;
-
                         break;
                     case "/":
                         token.OperatorSymbol = "/";
                         token.associativity = OperationAssociativity.LeftToRight;
-                        token.ParametersCont = 2;
                         token.Value = str;
-
                         break;
                     case "*":
                         token.OperatorSymbol = "*";
                         token.associativity = OperationAssociativity.LeftToRight;
-                        token.ParametersCont = 2;
                         token.Value = str;
-
                         break;
                     default:
                         throw new ArgumentException("Not a valid token");
@@ -98,6 +87,5 @@ namespace Mathematics.Engine
             }
             return token;
         }
-
     }
 }
