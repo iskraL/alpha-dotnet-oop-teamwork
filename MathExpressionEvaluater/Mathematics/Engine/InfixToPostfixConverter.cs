@@ -63,12 +63,20 @@ namespace Mathematics.Engine
             while (index < tokens.Count())
             {
                 Token token = tokens[index];
+                Token nextToken;
+
                 if (token.Type == TokenType.Operand)
                 {
                     outputQueue.Enqueue(token);
                 }
                 else if (token.Type == TokenType.Operator)
                 {
+                    if (index < tokens.Count() - 1)
+                    {
+                       nextToken = tokens[index + 1];
+                       Validator.ValidateNextSymbol(token, nextToken);
+                    }
+                    
                     while (operatorsStack.Count != 0)
                     {
                        Token currentOperator = operatorsStack.Peek();
@@ -90,17 +98,24 @@ namespace Mathematics.Engine
                 }
                 else if (token.Type == TokenType.LeftBracket)
                 {
+                    if (index < tokens.Count() - 1)
+                    {
+                        nextToken = tokens[index + 1];
+                        Validator.ValidateNextSymbol(token, nextToken);
+                    }
                     operatorsStack.Push(token);
                 }
                 else if (token.Type == TokenType.RightBracket)
                 {
-                    while(operatorsStack.Peek().Type != TokenType.LeftBracket)
+                    if (index < tokens.Count() - 1)
+                    {
+                        nextToken = tokens[index + 1];
+                        Validator.ValidateNextSymbol(token, nextToken);
+                    }
+                    while (operatorsStack.Peek().Type != TokenType.LeftBracket)
                     {
                         outputQueue.Enqueue(operatorsStack.Pop());
-                        if (operatorsStack.Count() == 0)
-                        {
-                            throw new Exception("Missmatched brackets");
-                        }
+                        Validator.ValidateBrackets(operatorsStack.Count);
                     }
                     operatorsStack.Pop();
                 }
@@ -111,7 +126,7 @@ namespace Mathematics.Engine
                 if(operatorsStack.Peek().Type == TokenType.LeftBracket 
                     || operatorsStack.Peek().Type == TokenType.RightBracket)
                 {
-                    throw new Exception("Missmatched brackets");
+                    throw new InvalidMathematicalExpressionException("Missmatched brackets");
                 }
                 else
                 {

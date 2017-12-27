@@ -45,8 +45,10 @@
     <Compile Include="Engine\Contracts\IInfixToPostfixConverter.cs" />
     <Compile Include="Engine\Contracts\IToken.cs" />
     <Compile Include="Engine\InfixToPostfixConverter.cs" />
+    <Compile Include="Engine\InvalidMathematicalExpressionException.cs" />
     <Compile Include="Engine\Token.cs" />
     <Compile Include="Engine\TokenType.cs" />
+    <Compile Include="Engine\Validator.cs" />
     <Compile Include="General\Contracts\IFactory.cs" />
     <Compile Include="Engine\Contracts\IReversePolishNotationCalculator.cs" />
     <Compile Include="General\Models\Factory.cs" />

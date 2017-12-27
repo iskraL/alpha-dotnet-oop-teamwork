@@ -15,7 +15,7 @@ namespace Mathematics
         {
             
             var tokenize = new InfixToPostfixConverter();
-            Token[] arr = tokenize.Tokenize("2 - (-2)");
+            Token[] arr = tokenize.Tokenize("(1+2)*3");
             
             var output = tokenize.ConvertInfixToPostix(arr);
 
@@ -28,15 +28,11 @@ namespace Mathematics
             }
             IReversePolishNotationCalculator calc = new ReversePolishNotationCalculator();
 
-            try
-            {
+          
+          
                 var result = calc.EvaluateRPNExpression(array);
                 Console.WriteLine(result.Value);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+          
 
         }
     }
