@@ -1,8 +1,8 @@
-﻿using Mathematics.Operands.Contracts;
-using Mathematics.Operands.Models;
-
-namespace Mathematics.Operations.Models
+﻿namespace Mathematics.Operations.Models
 {
+    using Mathematics.Operands.Contracts;
+    using Mathematics.Operands.Models;
+
     internal class Substraction : BinaryOperation
     {
         protected override IOperand ApplyOperation(IOperand o1, IOperand o2)

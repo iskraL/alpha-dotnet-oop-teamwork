@@ -1,7 +1,7 @@
-﻿using Mathematics.Operations.Enums;
-
-namespace Mathematics.Operations.Models
+﻿namespace Mathematics.Operations.Models
 {
+    using Mathematics.Operations.Enums;
+
     internal abstract class BinaryOperation : Operation
     {
         protected BinaryOperation() : 

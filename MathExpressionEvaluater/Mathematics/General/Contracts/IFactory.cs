@@ -1,7 +1,7 @@
-﻿using Mathematics.Operations.Contracts;
-
-namespace Mathematics.General.Contracts
+﻿namespace Mathematics.General.Contracts
 {
+    using Mathematics.Operations.Contracts;
+
     internal interface IFactory
     {
         IOperation CreateAdditionOperation();

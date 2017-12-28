@@ -1,8 +1,8 @@
-﻿using System;
-using Mathematics.Operands.Contracts;
-
-namespace Mathematics.Operands.Models
+﻿namespace Mathematics.Operands.Models
 {
+    using System;
+    using Mathematics.Operands.Contracts;
+
     internal struct IntType : IOperand
     {
         public IntType(int value)

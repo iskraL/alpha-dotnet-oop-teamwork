@@ -1,9 +1,9 @@
-﻿using Mathematics.General.Contracts;
-using Mathematics.Operations.Contracts;
-using Mathematics.Operations.Models;
-
-namespace Mathematics.General.Models
+﻿namespace Mathematics.General.Models
 {
+    using Mathematics.General.Contracts;
+    using Mathematics.Operations.Contracts;
+    using Mathematics.Operations.Models;
+
     internal class Factory : IFactory
     {
         public IOperation CreateAdditionOperation()

@@ -1,13 +1,10 @@
-﻿using Mathematics.Engine.Contracts;
-using Mathematics.Operations.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mathematics.Engine
+﻿namespace Mathematics.Engine
 {
+    using Mathematics.Engine.Contracts;
+    using Mathematics.Operations.Enums;
+    using System.Collections.Generic;
+    using System.Linq;
+
     internal class InfixToPostfixConverter : IInfixToPostfixConverter
     {
         public Token[] Tokenize(string expression)

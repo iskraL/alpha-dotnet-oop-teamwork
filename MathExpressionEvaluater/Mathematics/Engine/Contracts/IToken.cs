@@ -1,12 +1,7 @@
-﻿using Mathematics.Operations.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mathematics.Engine.Contracts
+﻿namespace Mathematics.Engine.Contracts
 {
+    using Mathematics.Operations.Enums;
+
     internal interface IToken
     {
         string Value { get; set;}

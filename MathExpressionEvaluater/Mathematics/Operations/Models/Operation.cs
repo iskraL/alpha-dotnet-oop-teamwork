@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Mathematics.Operands.Contracts;
-using Mathematics.Operations.Contracts;
-using Mathematics.Operations.Enums;
-
-namespace Mathematics.Operations.Models
+﻿namespace Mathematics.Operations.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using Mathematics.Operands.Contracts;
+    using Mathematics.Operations.Contracts;
+    using Mathematics.Operations.Enums;
+
     internal abstract class Operation : IOperation, IAssociativityOperation
     {
         protected Operation(OperationAssociativity associativity)

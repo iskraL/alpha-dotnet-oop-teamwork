@@ -1,7 +1,7 @@
-﻿using Mathematics.Operands.Contracts;
-
-namespace Mathematics.Engine.Contracts
+﻿namespace Mathematics.Engine.Contracts
 {
+    using Mathematics.Operands.Contracts;
+
     internal interface IReversePolishNotationCalculator
     {
         IOperand EvaluateRPNExpression(string[] tokens);

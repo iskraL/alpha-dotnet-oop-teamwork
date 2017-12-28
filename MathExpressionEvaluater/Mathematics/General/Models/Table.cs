@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Mathematics.Operations.Contracts;
-
-namespace Mathematics.General.Models
+﻿namespace Mathematics.General.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using Mathematics.Operations.Contracts;
+
     internal static class Table
     {
         private static readonly Dictionary<string, int> operations;

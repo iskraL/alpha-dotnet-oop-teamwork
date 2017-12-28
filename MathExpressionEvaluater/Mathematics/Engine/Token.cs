@@ -1,14 +1,10 @@
-﻿using Mathematics.Engine.Contracts;
-using Mathematics.General.Models;
-using Mathematics.Operations.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mathematics.Engine
+﻿namespace Mathematics.Engine
 {
+    using Mathematics.Engine.Contracts;
+    using Mathematics.General.Models;
+    using Mathematics.Operations.Enums;
+    using System;
+
     internal class Token : IToken
     {
         private int value;

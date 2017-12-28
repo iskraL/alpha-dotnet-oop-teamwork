@@ -4,10 +4,10 @@ using Mathematics.Engine.Contracts;
 using Mathematics.General.Models;
 using Mathematics.Operands.Contracts;
 using Mathematics.Operands.Models;
-using Mathematics.Operations.Contracts;
-
 namespace Mathematics.Engine
 {
+    using Mathematics.Operations.Contracts;
+
     internal sealed class ReversePolishNotationCalculator : IReversePolishNotationCalculator
     {
         protected readonly Stack<IOperand> machineStack;
