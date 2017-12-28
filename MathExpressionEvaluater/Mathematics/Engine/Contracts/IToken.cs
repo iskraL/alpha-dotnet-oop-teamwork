@@ -10,7 +10,6 @@ namespace Mathematics.Engine.Contracts
     internal interface IToken
     {
         string Value { get; set;}
-        string OperatorSymbol { get;}
         int ParametersCount { get;}//Can be used if unary operations are added
         TokenType Type { get;}
         OperationAssociativity Associativity { get;}

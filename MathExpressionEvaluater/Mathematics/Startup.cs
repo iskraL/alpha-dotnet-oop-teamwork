@@ -15,7 +15,7 @@ namespace Mathematics
         {
             
             var tokenize = new InfixToPostfixConverter();
-            Token[] arr = tokenize.Tokenize("(1+2)*3");
+            Token[] arr = tokenize.Tokenize("(1+2)*(3+2)");
             
             var output = tokenize.ConvertInfixToPostix(arr);
 

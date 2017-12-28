@@ -1,4 +1,5 @@
-﻿using Mathematics.General.Models;
+﻿using Mathematics.Engine.Contracts;
+using Mathematics.General.Models;
 using Mathematics.Operations.Enums;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mathematics.Engine
 {
-    internal class Token
+    internal class Token : IToken
     {
         private int value;
         private OperationAssociativity associativity;
@@ -21,7 +22,6 @@ namespace Mathematics.Engine
         }
 
         public string Value { get; set; }
-        public string OperatorSymbol { get; private set; }
         public int ParametersCount { get; private set; }//Can be used if unary operations are added
         public TokenType Type { get; private set; }
         public OperationAssociativity Associativity { get; private set; }
@@ -30,7 +30,7 @@ namespace Mathematics.Engine
         {
             get
             {
-                return Table.Operations[this.OperatorSymbol];
+                return Table.Operations[this.Value];
             }
             private set
             {
@@ -62,52 +62,47 @@ namespace Mathematics.Engine
                 switch (str)
                 {
                     case "+":
-                        token.OperatorSymbol = "+";
                         token.Associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "-":
-                        token.OperatorSymbol = "-";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "/":
-                        token.OperatorSymbol = "/";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "*":
-                        token.OperatorSymbol = "*";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "%":
-                        token.OperatorSymbol = "%";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "&":
-                        token.OperatorSymbol = "&";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "|":
-                        token.OperatorSymbol = "|";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case "<<":
-                        token.OperatorSymbol = "<<";
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     case ">>":
-                        token.OperatorSymbol = ">>";
+                        token.associativity = OperationAssociativity.LeftToRight;
+                        token.Value = str;
+                        break;
+                    case "^":
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
                     default:
-                        throw new ArgumentException("Not a valid token");
+                        throw new ArgumentException("Not a valid token.");
                 }
             }
             return token;
