@@ -43,6 +43,11 @@ namespace Mathematics.Engine
             expression = expression.Replace("-", " - ");
             expression = expression.Replace("/", " / ");
             expression = expression.Replace("*", " * ");
+            expression = expression.Replace("%", " % ");
+            expression = expression.Replace("&", " & ");
+            expression = expression.Replace("|", " | ");
+            expression = expression.Replace("<<", " << ");
+            expression = expression.Replace(">>", " >> ");
             expression = expression.Replace("(", " ( ");
             expression = expression.Replace(")", " ) ");
             expression = expression.Trim();
