@@ -81,6 +81,31 @@ namespace Mathematics.Engine
                         token.associativity = OperationAssociativity.LeftToRight;
                         token.Value = str;
                         break;
+                    case "%":
+                        token.OperatorSymbol = "%";
+                        token.associativity = OperationAssociativity.LeftToRight;
+                        token.Value = str;
+                        break;
+                    case "&":
+                        token.OperatorSymbol = "&";
+                        token.associativity = OperationAssociativity.LeftToRight;
+                        token.Value = str;
+                        break;
+                    case "|":
+                        token.OperatorSymbol = "|";
+                        token.associativity = OperationAssociativity.LeftToRight;
+                        token.Value = str;
+                        break;
+                    case "<<":
+                        token.OperatorSymbol = "<<";
+                        token.associativity = OperationAssociativity.LeftToRight;
+                        token.Value = str;
+                        break;
+                    case ">>":
+                        token.OperatorSymbol = ">>";
+                        token.associativity = OperationAssociativity.LeftToRight;
+                        token.Value = str;
+                        break;
                     default:
                         throw new ArgumentException("Not a valid token");
                 }
