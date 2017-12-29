@@ -6,18 +6,18 @@ using Mathematics.Operands.Contracts;
 using Mathematics.Operands.Models;
 namespace Mathematics.Engine
 {
-    using Mathematics.Operations.Contracts;
+    using Operations.Contracts;
 
-    internal sealed class ReversePolishNotationCalculator : IReversePolishNotationCalculator
+    internal sealed class PostfixCalculator : IPostfixCalculator
     {
         protected readonly Stack<IOperand> machineStack;
 
-        public ReversePolishNotationCalculator()
+        public PostfixCalculator()
         {
             this.machineStack = new Stack<IOperand>();
         }
 
-        public IOperand EvaluateRPNExpression(string[] tokens)
+        public IOperand EvaluateExpression(IEnumerable<string> tokens)
         {
             this.machineStack.Clear();
 

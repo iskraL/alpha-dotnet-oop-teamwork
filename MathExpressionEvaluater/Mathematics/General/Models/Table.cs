@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using Mathematics.Operations.Contracts;
+    using Operations.Contracts;
 
     internal static class Table
     {

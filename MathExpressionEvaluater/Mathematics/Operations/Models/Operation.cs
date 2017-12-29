@@ -2,9 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
-    using Mathematics.Operands.Contracts;
-    using Mathematics.Operations.Contracts;
-    using Mathematics.Operations.Enums;
+    using Operands.Contracts;
+    using Contracts;
+    using Enums;
 
     internal abstract class Operation : IOperation, IAssociativityOperation
     {

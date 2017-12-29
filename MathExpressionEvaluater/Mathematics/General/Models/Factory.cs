@@ -1,8 +1,8 @@
 ﻿namespace Mathematics.General.Models
 {
-    using Mathematics.General.Contracts;
-    using Mathematics.Operations.Contracts;
-    using Mathematics.Operations.Models;
+    using Contracts;
+    using Operations.Contracts;
+    using Operations.Models;
 
     internal class Factory : IFactory
     {

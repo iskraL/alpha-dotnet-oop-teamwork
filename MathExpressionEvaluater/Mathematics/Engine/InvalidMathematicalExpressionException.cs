@@ -4,8 +4,18 @@
 
     internal class InvalidMathematicalExpressionException : Exception
     {
-        public InvalidMathematicalExpressionException(string message) :base(message)
+        private const string IvalidMathematicalExpressionMessage = "Ivalid mathematical expression!";
+
+        public InvalidMathematicalExpressionException()
+            : this(IvalidMathematicalExpressionMessage)
         {
+            
+        }
+
+        public InvalidMathematicalExpressionException(string message) 
+            : base(message)
+        {
+
         }
     }
 }

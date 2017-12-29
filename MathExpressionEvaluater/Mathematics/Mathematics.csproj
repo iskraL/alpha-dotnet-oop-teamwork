@@ -43,16 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\Contracts\IInfixToPostfixConverter.cs" />
-    <Compile Include="Engine\Contracts\IToken.cs" />
+    <Compile Include="Engine\Contracts\IParser.cs" />
+    <Compile Include="Engine\ExpressionParser.cs" />
     <Compile Include="Engine\InfixToPostfixConverter.cs" />
     <Compile Include="Engine\InvalidMathematicalExpressionException.cs" />
-    <Compile Include="Engine\Token.cs" />
-    <Compile Include="Engine\TokenType.cs" />
-    <Compile Include="Engine\Validator.cs" />
     <Compile Include="General\Contracts\IFactory.cs" />
-    <Compile Include="Engine\Contracts\IReversePolishNotationCalculator.cs" />
+    <Compile Include="Engine\Contracts\IPostfixCalculator.cs" />
     <Compile Include="General\Models\Factory.cs" />
-    <Compile Include="Engine\ReversePolishNotationCalculator.cs" />
+    <Compile Include="Engine\PostfixCalculator.cs" />
     <Compile Include="Operands\Contracts\IOperand.cs" />
     <Compile Include="Operands\Models\IntType.cs" />
     <Compile Include="Operations\Contracts\IOperation.cs" />
@@ -71,7 +69,8 @@
     <Compile Include="Operations\Models\BinaryOperation.cs" />
     <Compile Include="General\Models\Table.cs" />
     <Compile Include="Operations\Models\Operation.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Expression.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
