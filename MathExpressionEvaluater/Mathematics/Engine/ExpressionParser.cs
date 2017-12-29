@@ -18,7 +18,7 @@ namespace Mathematics.Engine
         {
             foreach (var operation in Table.Operations.Keys)
             {
-                expression.Replace(operation, $" {operation} ");
+                expression = expression.Replace(operation, $" {operation} ");
             }
 
             return expression;
