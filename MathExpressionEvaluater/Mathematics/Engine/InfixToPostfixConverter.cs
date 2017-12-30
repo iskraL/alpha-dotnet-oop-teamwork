@@ -71,15 +71,16 @@
 
         private bool IsNumeric(string token)
         {
-            int number;
-            if (int.TryParse(token, out number))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //int number;
+            //if (int.TryParse(token, out number))
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;S
+            //}
+            return int.TryParse(token, out _);
         }
     }
 }
