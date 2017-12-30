@@ -15,7 +15,7 @@
             while (index < tokens.Length)
             {
                 var token = tokens[index];                            
-                if (IsNumeric(token))
+                if (int.TryParse(token, out _))
                 {
                     outputQueue.Enqueue(token);
                 }
@@ -52,6 +52,10 @@
                     }
                     operatorsStack.Pop();
                 }
+                else
+                {
+                    throw new InvalidMathematicalExpressionException();
+                }
                 index++;
             }
             while(operatorsStack.Count != 0)
@@ -67,20 +71,6 @@
                 }
             }
             return outputQueue;
-        }
-
-        private bool IsNumeric(string token)
-        {
-            //int number;
-            //if (int.TryParse(token, out number))
-            //{
-            //    return true;
-            //}
-            //else
-            //{
-            //    return false;S
-            //}
-            return int.TryParse(token, out _);
         }
     }
 }
