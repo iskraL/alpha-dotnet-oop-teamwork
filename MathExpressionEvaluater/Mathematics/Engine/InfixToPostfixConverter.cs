@@ -14,7 +14,24 @@
 
             while (index < tokens.Length)
             {
-                var token = tokens[index];                            
+                var token = tokens[index];
+        
+                if (index < tokens.Length - 1)
+                {
+                    if (token == "-" && tokens[index + 1] != "(")
+                    {
+                        if (tokens[0]=="-"||tokens[index - 1] == "(")
+                        {
+                            int v = 0;
+                            index++;
+                            if ((int.TryParse(tokens[index], out v)))
+                            {
+                                token = (0 - v).ToString();
+                            }
+                        }
+                    }
+                }
+            
                 if (int.TryParse(token, out _))
                 {
                     outputQueue.Enqueue(token);
@@ -42,7 +59,7 @@
                 }
                 else if (token=="(")
                 {
-                    if (tokens[index+1] == ")" || Table.Operations.ContainsKey(tokens[index+1]))
+                    if (tokens[index+1] == ")")
                     {
                         throw new InvalidMathematicalExpressionException();
                     }

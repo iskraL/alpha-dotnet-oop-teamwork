@@ -7,7 +7,7 @@ namespace Mathematics
         static void Main(string[] args)
         {
             Expression e = new Expression();
-            Console.WriteLine(e.Evaluate("2+(-2)"));
+            Console.WriteLine(e.Evaluate("2*(-2)-2"));
         }
     }
 }
