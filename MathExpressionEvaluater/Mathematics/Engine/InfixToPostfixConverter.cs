@@ -42,6 +42,10 @@
                 }
                 else if (token=="(")
                 {
+                    if (tokens[index+1] == ")" || Table.Operations.ContainsKey(tokens[index+1]))
+                    {
+                        throw new InvalidMathematicalExpressionException();
+                    }
                     operatorsStack.Push(token);
                 }
                 else if (token==")")
