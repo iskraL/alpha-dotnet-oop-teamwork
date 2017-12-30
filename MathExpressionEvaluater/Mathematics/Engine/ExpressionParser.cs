@@ -18,10 +18,12 @@
         {
             foreach (var operation in Table.Operations.Keys)
             {
-                expression = expression.Replace(operation, $" {operation} ")
-                    .Replace("(", " ( ")
-                    .Replace(")", " ) ");
+                expression = expression.Replace(operation, $" {operation} ");
             }
+
+            expression = expression
+                .Replace("(", " ( ")
+                .Replace(")", " ) ");
 
             return expression;
         }
