@@ -16,11 +16,11 @@ namespace Mathematics
             postfixConverter = new InfixToPostfixConverter();
             postfixCalculator = new PostfixCalculator();
         }
-
+        
         public string Evaluate(string expression)
         {
             IOperand result;
-
+            
             try
             {
                 var infixExpression = parser.Parse(expression);

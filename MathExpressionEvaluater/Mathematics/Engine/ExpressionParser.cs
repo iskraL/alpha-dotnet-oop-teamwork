@@ -1,9 +1,9 @@
-﻿using System;
-using Mathematics.Engine.Contracts;
-using Mathematics.General.Models;
-
-namespace Mathematics.Engine
+﻿namespace Mathematics.Engine
 {
+    using System;
+    using Mathematics.Engine.Contracts;
+    using Mathematics.General.Models;
+
     public class ExpressionParser : IExpressionParser
     {
         private const char WhiteSpace = ' ';
@@ -18,7 +18,9 @@ namespace Mathematics.Engine
         {
             foreach (var operation in Table.Operations.Keys)
             {
-                expression.Replace(operation, $" {operation} ");
+                expression = expression.Replace(operation, $" {operation} ")
+                    .Replace("(", " ( ")
+                    .Replace(")", " ) ");
             }
 
             return expression;
