@@ -1,13 +1,15 @@
-﻿namespace Mathematics.Engine
+﻿using Mathematics.General.Models;
+
+namespace Mathematics.Engine
 {
     using System;
 
-    internal class InvalidMathematicalExpressionException : Exception
+    public class InvalidMathematicalExpressionException : Exception
     {
-        private const string IvalidMathematicalExpressionMessage = "Ivalid mathematical expression!";
+        private const string ErrorMessage = ErrorMessages.InvalidMathExpression;
 
         public InvalidMathematicalExpressionException()
-            : this(IvalidMathematicalExpressionMessage)
+            : this(ErrorMessage)
         {
             
         }

@@ -20,16 +20,16 @@ namespace Mathematics
         public string Evaluate(string expression)
         {
             IOperand result;
-            
+
             try
             {
                 var infixExpression = parser.Parse(expression);
                 var postfixExpression = postfixConverter.ConvertInfixToPostix(infixExpression);
                 result = postfixCalculator.EvaluateExpression(postfixExpression);
             }
-            catch (Exception exp)
+            catch (Exception ex)
             {
-                return exp.Message;
+                return ex.Message;
             }
 
             return result.Value.ToString();

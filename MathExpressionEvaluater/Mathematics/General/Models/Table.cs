@@ -55,7 +55,7 @@
                 case ">>":
                     return factory.CreateBiwiseRightShiftOperation();
                 default:
-                    throw new ArgumentException();
+                    throw new ArgumentException(string.Format(ErrorMessages.UnsupportedOperation, token));
             }
         }
 

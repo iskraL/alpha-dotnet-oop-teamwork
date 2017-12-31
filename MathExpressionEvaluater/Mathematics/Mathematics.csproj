@@ -49,6 +49,7 @@
     <Compile Include="Engine\InvalidMathematicalExpressionException.cs" />
     <Compile Include="General\Contracts\IFactory.cs" />
     <Compile Include="Engine\Contracts\IPostfixCalculator.cs" />
+    <Compile Include="General\Models\ErrorMessages.cs" />
     <Compile Include="General\Models\Factory.cs" />
     <Compile Include="Engine\PostfixCalculator.cs" />
     <Compile Include="Operands\Contracts\IOperand.cs" />

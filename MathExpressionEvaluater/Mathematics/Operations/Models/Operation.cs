@@ -1,4 +1,6 @@
-﻿namespace Mathematics.Operations.Models
+﻿using Mathematics.General.Models;
+
+namespace Mathematics.Operations.Models
 {
     using System;
     using System.Collections.Generic;
@@ -22,7 +24,8 @@
             {
                 if (!this.IsComplete)
                 {
-                    throw new InvalidOperationException();
+                    throw new InvalidOperationException(string.
+                        Format(ErrorMessages.IncompleteResult, GetType().Name));
                 }
 
                 return ApplyOperation(this.Operands[1], this.Operands[0]);

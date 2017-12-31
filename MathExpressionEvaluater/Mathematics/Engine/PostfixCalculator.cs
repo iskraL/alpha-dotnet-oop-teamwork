@@ -37,7 +37,7 @@ namespace Mathematics.Engine
 
             if (this.machineStack.Count != 1)
             {
-                throw new Exception("Invalid mathematical expression");
+                throw new InvalidMathematicalExpressionException();
             }
 
             return this.machineStack.Pop();
@@ -49,7 +49,8 @@ namespace Mathematics.Engine
             {
                 if (this.machineStack.Count == 0)
                 {
-                    throw new InvalidOperationException("Ivalid mathematical expression");
+                    throw new InvalidOperationException(string
+                        .Format(ErrorMessages.IncompleteResult, operation.GetType().Name));
                 }
 
                 operation.AddOperand(this.machineStack.Pop());
