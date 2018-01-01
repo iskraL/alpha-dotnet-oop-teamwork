@@ -31,8 +31,9 @@
                         }
                     }
                 }
-            
-                if (int.TryParse(token, out _))
+
+                int parsable;
+                if (int.TryParse(token, out parsable))
                 {
                     outputQueue.Enqueue(token);
                 }

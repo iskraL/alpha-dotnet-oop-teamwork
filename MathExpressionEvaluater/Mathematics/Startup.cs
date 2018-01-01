@@ -2,14 +2,13 @@
 
 namespace Mathematics
 {
-    public class Program
+    public class Startup
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Expression e = new Expression();
 
-            //Unhandled exception in InfixToPostfix
-            //Console.WriteLine(e.Evaluate("("));
+            Console.WriteLine(e.Evaluate("("));
 
             Console.WriteLine("5 + (-4) = " + e.Evaluate("5 + (-4)"));
             Console.WriteLine("5 + -4 = " + e.Evaluate("5 + -4"));

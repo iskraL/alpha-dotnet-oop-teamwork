@@ -71,7 +71,7 @@
     <Compile Include="General\Models\Table.cs" />
     <Compile Include="Operations\Models\Operation.cs" />
     <Compile Include="Expression.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
