@@ -68,11 +68,22 @@
                 }
                 else if (token==")")
                 {
-                    while (operatorsStack.Peek() != "(")
+                    if (operatorsStack.Count == 0)
                     {
-                        outputQueue.Enqueue(operatorsStack.Pop());
+                        throw new InvalidMathematicalExpressionException();
                     }
-                    operatorsStack.Pop();
+
+                    var top = operatorsStack.Pop();
+                    while (top != "(")
+                    {
+                        outputQueue.Enqueue(top);
+                        if (operatorsStack.Count == 0)
+                        {
+                            throw new InvalidMathematicalExpressionException();
+                        }
+                        top = operatorsStack.Pop();
+                    }
+                    
                 }
                 else
                 {
